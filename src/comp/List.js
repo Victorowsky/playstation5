@@ -7,20 +7,19 @@ const List = ({ data }) => {
         {" "}
         <span
           style={
-            item.availablity === "NIEDOSTĘPNY"
+            item.availability !== "DOSTĘPNY"
               ? { color: "#f94144" }
               : { color: "#90be6d" }
           }
         >
-          {item.availablity}
-          {/* SPELLING MISTAKE POTEM availability BEDZIE */}
+          {item.availability}
         </span>{" "}
       </a>{" "}
     </div>
   ));
 
   data.forEach((item) => {
-    if (item.availablity !== "NIEDOSTĘPNY") {
+    if (item.availability === "DOSTĘPNY") {
       alert(`Dostępne w ${item.shop}!`);
     }
   });

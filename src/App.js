@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import RefreshTimer from './comp/RefreshTimer';
 
 function App() {
   const [data, setData] = useState();
@@ -35,6 +36,7 @@ function App() {
             <div className="shops">
               <List data={data} />
             </div>
+            <RefreshTimer/>
           </div>
         </div>
       ) : (
