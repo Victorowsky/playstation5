@@ -30,6 +30,8 @@ body {
 .shop {
   padding: 15px;
   flex: 1;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .availability {
