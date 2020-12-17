@@ -8,8 +8,8 @@ const List = ({ data }) => {
         <span
           style={
             item.availability !== "DOSTĘPNY"
-              ? { color: "#f94144" }
-              : { color: "#90be6d" }
+              ? { color: "#f94144", fontWeight: "bold" }
+              : { color: "#90be6d", fontWeight: "bold" }
           }
         >
           {item.availability}
