@@ -18,11 +18,18 @@ const List = ({ data }) => {
     </div>
   ));
 
+
+
+
   data.forEach((item) => {
-    if (item.availability === "DOSTĘPNY") {
-      alert(`Dostępne w ${item.shop}!`);
+    if(item.availability === 'DOSTĘPNY'){
+    document.title = `Dostępny w ${item.shop}!`
     }
   });
+
+
+
+  
 
   return <>{list}</>;
 };
