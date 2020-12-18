@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import RefreshTimer from './comp/RefreshTimer';
+import RefreshTimer from "./comp/RefreshTimer";
 
 function App() {
   const [data, setData] = useState();
+  const [refresh, setRefresh] = useState(1);
   const URL = "https://shielded-inlet-52440.herokuapp.com";
   useEffect(() => {
     fetch(`${URL}/dostepnosc`)
@@ -13,16 +14,8 @@ function App() {
       .then((res) => {
         setData(res);
       });
-    setInterval(() => {
-      fetch(`${URL}/dostepnosc`)
-        .then((res) => res.json())
-        .then((res) => {
-          setData(res);
-        });
-    }, 20000);
-  }, []);
 
-
+  }, [refresh]);
 
   return (
     <>
@@ -38,7 +31,7 @@ function App() {
             <div className="shops">
               <List data={data} />
             </div>
-            <RefreshTimer/>
+            <RefreshTimer setRefresh={setRefresh} />
           </div>
         </div>
       ) : (

@@ -8,7 +8,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function LinearDeterminate() {
+export default function LinearDeterminate({setRefresh}) {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(0);
 
@@ -16,6 +16,7 @@ export default function LinearDeterminate() {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
         if (oldProgress === 100) {
+          setRefresh(prev=> prev +1)
           return 0;
         }
         const diff = 1;
