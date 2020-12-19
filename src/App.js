@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       {data ? (
-        <div className="app">
+        <div className="app" >
           <div className="playstation5">
             <div className="image">
               <img
@@ -29,7 +29,7 @@ function App() {
               />
             </div>
             <div className="shops">
-              <List data={data} />
+              <List data={data}  />
             </div>
             <RefreshTimer setRefresh={setRefresh} />
           </div>

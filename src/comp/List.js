@@ -1,5 +1,5 @@
 import React from "react";
-const List = ({ data }) => {
+const List = ({ data, setShadowStyle }) => {
   const list = data.map((item, index) => (
     <div className="shop" key={index}>
       {item.shop} :{" "}
@@ -33,7 +33,11 @@ const List = ({ data }) => {
 
   data.forEach((item) => {
     if(item.availability === 'DOSTĘPNY'){
-    document.title = `Dostępny w ${item.shop}!`
+    document.title = `Dostępny w ${item.shop}!`;
+
+    }else{
+      document.title = "Playstation 5"
+
     }
   });
 

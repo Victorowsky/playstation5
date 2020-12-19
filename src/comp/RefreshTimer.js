@@ -27,7 +27,7 @@ export default function LinearDeterminate({setRefresh}) {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [setRefresh]);
 
   return (
     <div className={classes.root}>
