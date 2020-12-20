@@ -10,7 +10,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   flex-wrap: wrap;
   box-shadow: 2px 2px 20px white;
@@ -24,15 +24,13 @@ body {
 .shops {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .shop {
   padding: 15px;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  align-content: center;
+  align-content: space-around;
   justify-content: center;
 }
 

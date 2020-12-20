@@ -25,11 +25,11 @@ export default function AlertDialogSlide() {
   };
 
   return (
-    <div>
+    <>
       {/* <Button variant="outlined" style={{display:"none"}} color="primary" onClick={handleClickOpen}>
         Slide in alert dialog
       </Button> */}
-      <IconButton color="primary" onClick={handleClickOpen} style={{color:'white',position:'fixed', top: "100%", left:"50%", transform:"translate(-50%,0%)"}}>
+      <IconButton color="primary" onClick={handleClickOpen} style={{color:'white',position:'fixed', top: "2%", left:"95%", transform:"translate(-50%,0%)"}}>
   <InfoIcon />
 </IconButton>
 <Dialog/>
@@ -44,7 +44,7 @@ export default function AlertDialogSlide() {
         <DialogTitle style={{background: "#303030", color: 'white'}} id="alert-dialog-slide-title">{"Jak to działa?"}</DialogTitle>
         <DialogContent style={{background: "#303030", color: 'white'}}>
           <DialogContentText style={{background: "#303030", color: 'white'}} id="alert-dialog-slide-description">
-            Co 20 sekund serwer sprawdza czy Playstation 5 jest dostępne na sklepie.
+            Co 20 sekund serwer sprawdza czy Playstation 5 jest dostępne w sklepie.
             Następnie ty dostajesz tą informacje bez konieczności odświeżania strony. 
             Jeżeli produkt bedzie dostępny to zmieni sie nazwa karty, żebyś mógł to łatwo zobaczyć.
           </DialogContentText>
@@ -56,6 +56,6 @@ export default function AlertDialogSlide() {
 
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 }

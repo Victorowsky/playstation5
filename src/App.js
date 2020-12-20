@@ -20,8 +20,8 @@ function App() {
   return (
     <>
       {data ? (
-        <div className="app">
-          <div className="playstation5">
+        <div className="app" >
+          <div className="playstation5" style={{order:'1'}} >
             <div className="image">
               <img
                 src="https://gmedia.playstation.com/is/image/SIEPDC/playstation-5-with-dualsense-front-product-shot-01-ps5-en-30jul20?$native--t$"
@@ -31,9 +31,9 @@ function App() {
             <div className="shops">
               <List data={data} />
             </div>
-            <RefreshTimer setRefresh={setRefresh} />
+            <RefreshTimer setRefresh={setRefresh} /> {/* REFRESH HERE */}
           </div>
-          <Dialog />
+          <Dialog style={{order:'0'}} />
         </div>
       ) : (
         <div
