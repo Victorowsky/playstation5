@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import RefreshTimer from "./comp/RefreshTimer";
+// import RefreshTimer from "./comp/RefreshTimer";
 import Dialog from "./comp/Dialog";
 
 function App() {
@@ -16,6 +16,16 @@ function App() {
         setData(res);
       });
   }, [refresh]);
+
+
+  useEffect(()=>{
+    setInterval(() => {
+      setRefresh(prev=> prev+ 1)
+    }, 20000);
+
+
+  },[])
+
 
   return (
     <>
@@ -31,7 +41,7 @@ function App() {
             <div className="shops">
               <List data={data} />
             </div>
-            <RefreshTimer setRefresh={setRefresh} /> {/* REFRESH HERE */}
+            {/* <RefreshTimer value={value} setRefresh={setRefresh} /> REFRESH HERE */}
           </div>
           <Dialog style={{order:'0'}} />
         </div>
