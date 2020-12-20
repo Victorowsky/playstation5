@@ -3,6 +3,7 @@ import "./App.css";
 import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import RefreshTimer from "./comp/RefreshTimer";
+import Dialog from "./comp/Dialog";
 
 function App() {
   const [data, setData] = useState();
@@ -14,13 +15,12 @@ function App() {
       .then((res) => {
         setData(res);
       });
-
   }, [refresh]);
 
   return (
     <>
       {data ? (
-        <div className="app" >
+        <div className="app">
           <div className="playstation5">
             <div className="image">
               <img
@@ -29,10 +29,11 @@ function App() {
               />
             </div>
             <div className="shops">
-              <List data={data}  />
+              <List data={data} />
             </div>
             <RefreshTimer setRefresh={setRefresh} />
           </div>
+          <Dialog />
         </div>
       ) : (
         <div
