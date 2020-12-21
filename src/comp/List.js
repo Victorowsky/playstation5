@@ -1,5 +1,9 @@
 import React from "react";
-const List = ({ data, setShadowStyle }) => {
+// import SoundEffect from "./SoundEffect";
+
+
+
+const List = ({ data }) => {
   const list = data.map((item, index) => (
     <div className="shop" key={index}>
       {item.shop} :{" "}
@@ -28,9 +32,6 @@ const List = ({ data, setShadowStyle }) => {
     </div>
   ));
 
-
-
-
   data.forEach((item) => {
     if(item.availability === 'DOSTĘPNY'){
     document.title = `Dostępny w ${item.shop}!`;
@@ -45,3 +46,4 @@ const List = ({ data, setShadowStyle }) => {
 };
 
 export default List;
+

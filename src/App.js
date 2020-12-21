@@ -4,10 +4,12 @@ import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
 // import RefreshTimer from "./comp/RefreshTimer";
 import Dialog from "./comp/Dialog";
+import moment from "moment";
 
 function App() {
   const [data, setData] = useState();
   const [refresh, setRefresh] = useState(1);
+  const [lastUpdate, setLastUpdate] = useState();
   const URL = "https://shielded-inlet-52440.herokuapp.com";
   useEffect(() => {
     fetch(`${URL}/dostepnosc`)
@@ -15,23 +17,24 @@ function App() {
       .then((res) => {
         setData(res);
       });
+    setLastUpdate(
+      moment()
+        .utc(+1)
+        .format("HH:mm:ss")
+    );
   }, [refresh]);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     setInterval(() => {
-      setRefresh(prev=> prev+ 1)
+      setRefresh((prev) => prev + 1);
     }, 20000);
-
-
-  },[])
-
+  }, []);
 
   return (
     <>
       {data ? (
-        <div className="app" >
-          <div className="playstation5" style={{order:'1'}} >
+        <div className="app">
+          <div className="playstation5">
             <div className="image">
               <img
                 src="https://gmedia.playstation.com/is/image/SIEPDC/playstation-5-with-dualsense-front-product-shot-01-ps5-en-30jul20?$native--t$"
@@ -43,7 +46,8 @@ function App() {
             </div>
             {/* <RefreshTimer value={value} setRefresh={setRefresh} /> REFRESH HERE */}
           </div>
-          <Dialog style={{order:'0'}} />
+          <Dialog />
+          <div className="update">Ostatnia aktualizacja: {lastUpdate}</div>
         </div>
       ) : (
         <div
