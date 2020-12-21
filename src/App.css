@@ -34,7 +34,9 @@ body {
   justify-content: center;
 }
 .update {
-  align-self: flex-end;
+  position: relative;
+  top: 10px;
+  align-self: center;
   text-shadow: 3px 3px 3px black;
 }
 
