@@ -4,12 +4,11 @@ import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
 // import RefreshTimer from "./comp/RefreshTimer";
 import Dialog from "./comp/Dialog";
-import moment from "moment";
+// import moment from "moment";
 
 function App() {
   const [data, setData] = useState();
   const [refresh, setRefresh] = useState(1);
-  const [lastUpdate, setLastUpdate] = useState();
   const URL = "https://shielded-inlet-52440.herokuapp.com";
   useEffect(() => {
     fetch(`${URL}/dostepnosc`)
@@ -17,25 +16,19 @@ function App() {
       .then((res) => {
         setData(res);
       });
-    setLastUpdate(
-      moment()
-        .utc(+1)
-        .format("HH:mm:ss")
-    );
+
   }, [refresh]);
 
   useEffect(() => {
     setInterval(() => {
       setRefresh((prev) => prev + 1);
-    }, 20000);
+    }, 25000);
   }, []);
 
   return (
     <>
       {data ? (
-        
         <div className="app">
-          
           <div className="playstation5">
             <div className="image">
               <img
@@ -45,15 +38,14 @@ function App() {
             </div>
             <div className="shops">
               <List data={data} />
-
             </div>
             {/* <RefreshTimer value={value} setRefresh={setRefresh} /> REFRESH HERE */}
           </div>
           <Dialog />
-          <div className="update">Ostatnia aktualizacja: {lastUpdate}</div>
-
+          {data[data.length - 1] && (
+            <div className="update">Ostatnia aktualizacja: {data[data.length-1].lastUpdate} UTC</div>
+          )}
         </div>
-        
       ) : (
         <div
           className="progress"

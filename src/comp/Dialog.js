@@ -44,7 +44,7 @@ export default function AlertDialogSlide() {
         <DialogTitle style={{background: "#303030", color: 'white'}} id="alert-dialog-slide-title">{"Jak to działa?"}</DialogTitle>
         <DialogContent style={{background: "#303030", color: 'white'}}>
           <DialogContentText style={{background: "#303030", color: 'white'}} id="alert-dialog-slide-description">
-            Co 20 sekund serwer sprawdza czy Playstation 5 jest dostępne w sklepie.
+            Co 25 sekund serwer sprawdza czy Playstation 5 jest dostępne w sklepie.
             Następnie ty dostajesz tą informacje bez konieczności odświeżania strony. 
             Jeżeli produkt bedzie dostępny to zmieni sie nazwa karty, żebyś mógł to łatwo zobaczyć.
           </DialogContentText>
