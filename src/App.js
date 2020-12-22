@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
-// import RefreshTimer from "./comp/RefreshTimer";
+// import SoundEffect from "./comp/SoundEffect";
 import Dialog from "./comp/Dialog";
-// import moment from "moment";
 
 function App() {
   const [data, setData] = useState();
@@ -23,6 +22,8 @@ function App() {
     setInterval(() => {
       setRefresh((prev) => prev + 1);
     }, 25000);
+
+    
   }, []);
 
   return (
@@ -39,12 +40,12 @@ function App() {
             <div className="shops">
               <List data={data} />
             </div>
-            {/* <RefreshTimer value={value} setRefresh={setRefresh} /> REFRESH HERE */}
           </div>
           <Dialog />
           {data[data.length - 1] && (
-            <div className="update">Ostatnia aktualizacja: {data[data.length-1].lastUpdate} UTC</div>
+            <div className="update">Ostatnia aktualizacja: {data[data.length-1].lastUpdate}</div>
           )}
+          {/* <SoundEffect data={data}/> */}
         </div>
       ) : (
         <div
