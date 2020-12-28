@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import Admin from "./comp/Admin";
+// import Admin from "./comp/Admin";
 import Dialog from "./comp/Dialog";
 
 function App() {
@@ -20,8 +20,6 @@ function App() {
   }, [refresh]);
 
   useEffect(() => {
-
-
     setInterval(() => {
       setRefresh((prev) => prev + 1);
     }, 25000);
@@ -29,51 +27,48 @@ function App() {
 
   return (
     <>
-    {data ? 
-    //  <Router>
-    //  <Switch>
-      //  <Route path="/" exact>
-         <div className="app">
-           <div className="playstation5">
-             <div className="image">
-               <img
-                 src="https://gmedia.playstation.com/is/image/SIEPDC/playstation-5-with-dualsense-front-product-shot-01-ps5-en-30jul20?$native--t$"
-                 alt="Playstation 5"
-               />
-             </div>
-             <div className="shops">
-               <List data={data} />
-             </div>
-           </div>
-           <Dialog />
-           {data[data.length - 1] && (
-             <div className="update">
-               Ostatnia aktualizacja: {data[data.length - 1].lastUpdate}
-             </div>
-           )}
-         </div>
-        // </Route>
-        // <Route path="/admin">
-          // <Admin />
-      //  </Route>
-      // </Switch>
-  //  </Router>
- :  <div
- className="progress"
- style={{
-   position: "absolute",
-   left: "50%",
-   top: "50%",
-   transform: "translate(-50%,-50%)",
- }}
->
- <CircularProgress />
-</div>
-}
-       
-       
+      {data ? (
+        // <Router>
+        //   <Switch>
+        //     <Route path="/" exact>
+        <div className="app">
+          <div className="playstation5">
+            <div className="image">
+              <img
+                src="https://gmedia.playstation.com/is/image/SIEPDC/playstation-5-with-dualsense-front-product-shot-01-ps5-en-30jul20?$native--t$"
+                alt="Playstation 5"
+              />
+            </div>
+            <div className="shops">
+              <List data={data} />
+            </div>
+          </div>
+          <Dialog />
+          {data[data.length - 1] && (
+            <div className="update">
+              Ostatnia aktualizacja: {data[data.length - 1].lastUpdate}
+            </div>
+          )}
+        </div>
+      ) : (
+        //     </Route>
+        //     <Route path="/admin" exact component={Admin}></Route>
+        //   </Switch>
+        // </Router>
+        <div
+          className="progress"
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%,-50%)",
+          }}
+        >
+          <CircularProgress />
+        </div>
+      )}
     </>
-  
-)}
+  );
+}
 
 export default App;

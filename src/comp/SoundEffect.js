@@ -1,7 +1,5 @@
-
 import React from "react";
 import ReactPlayer from "react-player/lazy";
-
 
 const SoundEffect = ({ isPlaying }) => {
   return (

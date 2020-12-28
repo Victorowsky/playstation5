@@ -1,7 +1,5 @@
-
 import React, { useState } from "react";
 import SoundEffect from "./SoundEffect";
-
 
 const List = ({ data }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -41,16 +39,27 @@ const List = ({ data }) => {
   data.forEach((item) => {
     if (item.availability === "DOSTĘPNY") {
       document.title = `Dostępny w ${item.shop}!`;
-      if (!isPlaying) {
-        setIsPlaying(true);
-      }
     } else {
       document.title = "Playstation 5";
-      if (isPlaying) {
-        setIsPlaying(false);
-      }
     }
   });
+
+  const doesAvailable = data.filter((item) => {
+    if (
+      item.availability === "DOSTĘPNY" ||
+      item.availabilityDE === "DOSTĘPNY"
+    ) {
+      return item;
+    }
+  });
+
+  // PLAY SOUND IF AT LEAST 1 AVAILABLE
+  if (doesAvailable.length > 0) {
+    if (!isPlaying) setIsPlaying(true);
+  } else {
+    if (isPlaying) setIsPlaying(false);
+  }
+  /////////////////////////////////////
 
   return (
     <>
