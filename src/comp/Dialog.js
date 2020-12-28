@@ -1,13 +1,13 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Slide from '@material-ui/core/Slide';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Slide from "@material-ui/core/Slide";
+import IconButton from "@material-ui/core/IconButton";
+import InfoIcon from "@material-ui/icons/Info";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -29,10 +29,20 @@ export default function AlertDialogSlide() {
       {/* <Button variant="outlined" style={{display:"none"}} color="primary" onClick={handleClickOpen}>
         Slide in alert dialog
       </Button> */}
-      <IconButton color="primary" onClick={handleClickOpen} style={{color:'white',position:'fixed', top: "2%", left:"95%", transform:"translate(-50%,0%)"}}>
-  <InfoIcon />
-</IconButton>
-<Dialog/>
+      <IconButton
+        color="primary"
+        onClick={handleClickOpen}
+        style={{
+          color: "white",
+          position: "fixed",
+          top: "2%",
+          left: "95%",
+          transform: "translate(-50%,0%)",
+        }}
+      >
+        <InfoIcon />
+      </IconButton>
+      <Dialog />
       <Dialog
         open={open}
         TransitionComponent={Transition}
@@ -49,11 +59,10 @@ export default function AlertDialogSlide() {
             Jeżeli produkt bedzie dostępny to bedzie alarm.
           </DialogContentText>
         </DialogContent>
-        <DialogActions style={{background: "#303030"}}>
+      <DialogActions style={{ background: "#303030" }}>
           <Button onClick={handleClose} color="primary">
             OK
           </Button>
-
         </DialogActions>
       </Dialog>
     </>

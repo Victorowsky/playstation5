@@ -1,5 +1,7 @@
+
 import React, { useState } from "react";
 import SoundEffect from "./SoundEffect";
+
 
 const List = ({ data }) => {
   const [isPlaying, setIsPlaying] = useState(false);
