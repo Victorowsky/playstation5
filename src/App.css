@@ -44,12 +44,37 @@ body {
   padding: 15px;
 }
 
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px white;
+  padding: 15px;
+}
+
 a {
   text-decoration: none;
 }
 
 img {
   width: 300px;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 800px) {

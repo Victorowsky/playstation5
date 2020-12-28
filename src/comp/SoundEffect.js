@@ -1,30 +1,14 @@
-import { useEffect } from "react";
-import useSound from "use-sound";
-import alarm from "../alarm.mp3";
-const BoopButton = ({ data }) => {
-  const [play, { stop, isPlaying }] = useSound(alarm, {
-    volume: "0.10",
-  });
-  const available = data.filter((element) => {
-    if (element !== "DOSTĘPNY") {
-      return element;
-    }
-  });
-  let isSoundPlayed = false;
+import React from "react";
+import ReactPlayer from "react-player/lazy";
 
-  // console.log(available);
-  if (available.length && !isSoundPlayed) {
-    if (!isPlaying) play();
-    isSoundPlayed = true
-  } 
-
-  // getAudioContext().resume();
-
+const SoundEffect = ({ isPlaying }) => {
   return (
-    <button style={{ position: "absolute", display: "none" }} onClick={play}>
-      Boop!
-    </button>
+    <ReactPlayer
+      playing={isPlaying}
+      style={{ display: "none" }}
+      url="https://www.youtube.com/watch?v=rN4Y7mGlH8c"
+    />
   );
 };
 
-export default BoopButton;
+export default SoundEffect;
