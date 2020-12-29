@@ -1,17 +1,17 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import LinearProgress from '@material-ui/core/LinearProgress';
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 const useStyles = makeStyles({
   root: {
-    width: '100%',
+    width: "100%",
   },
 });
 
-export default function LinearDeterminate({setRefresh, value}) {
+export default function LinearDeterminate({ setRefresh, value }) {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(0);
-
+  // const [counter, setCounter] = useState(0);
   React.useEffect(() => {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
@@ -23,7 +23,6 @@ export default function LinearDeterminate({setRefresh, value}) {
         return Math.min(oldProgress + diff, 100);
       });
     }, 200);
-
     return () => {
       clearInterval(timer);
     };
