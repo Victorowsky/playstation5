@@ -52,7 +52,7 @@ function App() {
               )}
             </div>
           </Route>
-          <Route path="/admin" exact component={Admin}></Route>
+          <Route path="/admin" component={Admin}></Route>
         </Switch>
       ) : (
         <div

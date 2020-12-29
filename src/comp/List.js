@@ -1,38 +1,25 @@
 import React, { useState } from "react";
 import SoundEffect from "./SoundEffect";
+import UnAvailable from './UnAvailable';
+import Available from './Available';
 
 const List = ({ data }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const list = data.map((item, index) => (
     <div className="shop" key={index}>
-      {item.shop} :{" "}
-      <a href={item.link} target="_blank" rel="noopener noreferrer">
-        {" "}
-        <span
-          style={
-            item.availability !== "DOSTĘPNY"
-              ? { color: "#f94144", fontWeight: "bold" }
-              : { color: "#90be6d", fontWeight: "bold" }
-          }
-        >
-          {item.availability}
-        </span>{" "}
-      </a>{" "}
+      {item.shop} :
+      <div  className="availability" style={{display:'flex', padding:'0'}}>
+              <a title="Standard" href={item.link} target="_blank" rel="noopener noreferrer">
+        {item.availability === "DOSTĘPNY" ? <Available/> : <UnAvailable/>}
+      </a>
       {item.availabilityDE && (
-        <a href={item.linkDE} target="_blank" rel="noopener noreferrer">
-          <span
-            style={
-              item.availabilityDE !== "DOSTĘPNY"
-                ? { color: "#f94144", fontWeight: "bold" }
-                : { color: "#90be6d", fontWeight: "bold" }
-            }
-          >
-            {" "}
-            <span style={{ color: "white" }}>|</span> {item.availabilityDE}
-          </span>
+        <a title="Digital Edition" href={item.linkDE} target="_blank" rel="noopener noreferrer">
+         {item.availabilityDE === "DOSTĘPNY" ? <Available/> : <UnAvailable/>}
         </a>
       )}
+      </div>
+
     </div>
   ));
 
