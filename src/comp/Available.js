@@ -12,6 +12,11 @@ const useStyles = makeStyles((theme) => ({
           color :'#90be6d',
           borderColor: '#90be6d'
       },
+      "& .MuiButton-outlined:hover":{
+        backgroundColor: '#90be6d',
+        color: 'black',
+        transition:"0.6s",
+      }
       
     },
   }));
@@ -23,7 +28,7 @@ export default function OutlinedButtons({link}) {
 
   return (
     <div  className={classes.root}>
-        <Button variant="outlined">DOSTĘPNY</Button>
+        <Button  variant="outlined">DOSTĘPNY</Button>
     </div>
   );
 }

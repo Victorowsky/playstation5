@@ -11,6 +11,11 @@ const useStyles = makeStyles((theme) => ({
       color: "#f94144",
       borderColor: "#f94144",
     },
+    "& .MuiButton-outlined:hover":{
+      backgroundColor: '#f94144',
+      color: 'black',
+      transition:"0.6s",
+    }
   },
 }));
 
