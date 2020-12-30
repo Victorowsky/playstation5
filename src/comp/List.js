@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SoundEffect from "./SoundEffect";
-import UnAvailable from './UnAvailable';
-import Available from './Available';
+import UnAvailable from "./UnAvailable";
+import Available from "./Available";
 
 const List = ({ data }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -9,17 +9,34 @@ const List = ({ data }) => {
   const list = data.map((item, index) => (
     <div className="shop" key={index}>
       {item.shop} :
-      <div  className="availability" style={{display:'flex', padding:'0'}}>
-              <a title="Standard" href={item.link} target="_blank" rel="noopener noreferrer">
-        {item.availability === "DOSTĘPNY" ? <Available/> : <UnAvailable/>}
-      </a>
-      {item.availabilityDE && (
-        <a title="Digital Edition" href={item.linkDE} target="_blank" rel="noopener noreferrer">
-         {item.availabilityDE === "DOSTĘPNY" ? <Available/> : <UnAvailable/>}
+      <div className="availability" style={{ display: "flex", padding: "0" }}>
+        <a
+          title="Standard"
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {item.availability === "DOSTĘPNY" ? (
+            <Available />
+          ) : (
+            <UnAvailable value={item.availability} />
+          )}
         </a>
-      )}
+        {item.availabilityDE && (
+          <a
+            title="Digital Edition"
+            href={item.linkDE}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {item.availabilityDE === "DOSTĘPNY" ? (
+              <Available />
+            ) : (
+              <UnAvailable value={item.availabilityDE} />
+            )}
+          </a>
+        )}
       </div>
-
     </div>
   ));
 

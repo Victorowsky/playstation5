@@ -1,29 +1,25 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-       
-      },
-      '& .MuiButton-outlined':{
-          color :'#f94144',
-          borderColor: '#f94144'
-      },     
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
     },
-  }));
+    "& .MuiButton-outlined": {
+      color: "#f94144",
+      borderColor: "#f94144",
+    },
+  },
+}));
 
-
-export default function OutlinedButtons({link}) {
-
+export default function OutlinedButtons({ value }) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-        <Button variant="outlined">NIEDOSTĘPNY</Button>
+      <Button variant="outlined">{value}</Button>
     </div>
   );
 }
