@@ -48,6 +48,7 @@ const List = ({ data }) => {
     }
   });
 
+  // eslint-disable-next-line array-callback-return
   const doesAvailable = data.filter((item) => {
     if (
       item.availability === "DOSTĘPNY" ||
