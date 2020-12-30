@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
       },
       '& .MuiButton-outlined':{
           color :'#90be6d',
-          borderColor: '#90be6d'
+          borderColor: '#90be6d',
+          width: '129px',
       },
       "& .MuiButton-outlined:hover":{
         backgroundColor: '#90be6d',
