@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/playstation5/static/css/main.548b8590.chunk.css",
-    "main.js": "/playstation5/static/js/main.6e596c48.chunk.js",
-    "main.js.map": "/playstation5/static/js/main.6e596c48.chunk.js.map",
+    "main.js": "/playstation5/static/js/main.b64c1be9.chunk.js",
+    "main.js.map": "/playstation5/static/js/main.b64c1be9.chunk.js.map",
     "reactPlayerDailyMotion.js": "/playstation5/static/js/reactPlayerDailyMotion.a879901d.chunk.js",
     "reactPlayerDailyMotion.js.map": "/playstation5/static/js/reactPlayerDailyMotion.a879901d.chunk.js.map",
     "reactPlayerFacebook.js": "/playstation5/static/js/reactPlayerFacebook.89514ee0.chunk.js",
@@ -39,6 +39,6 @@
     "static/js/runtime-main.f7b40f90.js",
     "static/js/14.46b9a085.chunk.js",
     "static/css/main.548b8590.chunk.css",
-    "static/js/main.6e596c48.chunk.js"
+    "static/js/main.b64c1be9.chunk.js"
   ]
 }
