@@ -3,8 +3,11 @@ import SoundEffect from "./SoundEffect";
 import UnAvailable from "./UnAvailable";
 import Available from "./Available";
 
+
 const List = ({ data, isMuted }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+
+
 
   const list = data.map((item, index) => (
     <div className="shop" key={index}>

@@ -4,15 +4,19 @@ import "./App.css";
 import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Admin from "./comp/Admin";
-import VolumeButton from './comp/VolumeButton';
+import VolumeButton from "./comp/VolumeButton";
 import Dialog from "./comp/Dialog";
 // import Cookies from 'js-cookie'
+import io from "socket.io-client";
+
+const socketURL = "http://localhost:3001";
+
+const socket = io(socketURL);
 
 function App() {
   const [data, setData] = useState();
   const [refresh, setRefresh] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
-
 
   const URL = "https://shielded-inlet-52440.herokuapp.com";
   useEffect(() => {
@@ -24,10 +28,12 @@ function App() {
   }, [refresh]);
 
   useEffect(() => {
-    setInterval(() => {
-      setRefresh((prev) => prev + 1);
-    }, 25000);
-
+    // setInterval(() => {
+    //   setRefresh((prev) => prev + 1);
+    // }, 25000);
+    socket.on("data", (data) => {
+      setData(data);
+    });
   }, []);
 
   return (
@@ -48,13 +54,16 @@ function App() {
                 </div>
               </div>
               {/* <RefreshTimer /> */}
-              <Dialog />
-              <VolumeButton isMuted={isMuted} setIsMuted={setIsMuted}/>
-              {data[data.length - 1] && (
-                <div className="update">
-                  Ostatnia aktualizacja: {data[data.length - 1].lastUpdate}
-                </div>
-              )}
+              <div className="buttons">
+                <Dialog />
+                {data[data.length - 1] && (
+                  <div className="update">
+                    Ostatnia aktualizacja: {data[data.length - 1].lastUpdate}
+                  </div>
+                )}
+
+                <VolumeButton isMuted={isMuted} setIsMuted={setIsMuted} />
+              </div>
             </div>
           </Route>
           <Route path="/admin" component={Admin}></Route>

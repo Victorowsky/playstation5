@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 const VolumeButton = ({isMuted, setIsMuted}) => {
 
+
   return (
     <div
       onClick={() => {
@@ -15,10 +16,10 @@ const VolumeButton = ({isMuted, setIsMuted}) => {
       <IconButton 
       style={{
           color: "white",
-          position: "fixed",
-          top: "10%",
-          left: "95%",
-          transform: "translate(-50%,0%)",
+          // position: "fixed",
+          // bottom: "-5%",
+          // left: "92%",
+          // transform: "translate(-50%,0%)",
         }}>
       {!isMuted ? <VolumeUpIcon /> : <VolumeOffIcon />}
       </IconButton>

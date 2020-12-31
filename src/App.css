@@ -34,12 +34,6 @@ body {
   justify-content: flex-end;
   align-items: baseline;
 }
-.update {
-  position: relative;
-  top: 10px;
-  align-self: center;
-  text-shadow: 3px 3px 3px black;
-}
 
 .availability {
   padding: 15px;
@@ -69,7 +63,15 @@ img {
   top: 50%;
   transform: translate(0%, -50%);
 }
-.image {
+.buttons {
+  width: 100%;
+  display: flex;
+}
+.update {
+  align-self: center;
+  text-shadow: 3px 3px 3px black;
+  flex: 1;
+  text-align: center;
 }
 
 .player-wrapper {

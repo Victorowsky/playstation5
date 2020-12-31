@@ -34,10 +34,10 @@ export default function AlertDialogSlide() {
         onClick={handleClickOpen}
         style={{
           color: "white",
-          position: "fixed",
-          top: "2%",
-          left: "95%",
-          transform: "translate(-50%,0%)",
+          // position: "fixed",
+          // bottom: "-5%",
+          // left: "97%",
+          // transform: "translate(-50%,0%)",
         }}
       >
         <InfoIcon />
