@@ -9,7 +9,7 @@ import Dialog from "./comp/Dialog";
 // import Cookies from 'js-cookie'
 import io from "socket.io-client";
 
-const socketURL = "http://localhost:3001";
+const socketURL = "https://shielded-inlet-52440.herokuapp.com/";
 
 const socket = io(socketURL);
 
