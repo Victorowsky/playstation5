@@ -4,12 +4,15 @@ import "./App.css";
 import List from "./comp/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Admin from "./comp/Admin";
-// import RefreshTimer from "./comp/RefreshTimer";
+import VolumeButton from './comp/VolumeButton';
 import Dialog from "./comp/Dialog";
+// import Cookies from 'js-cookie'
 
 function App() {
   const [data, setData] = useState();
   const [refresh, setRefresh] = useState(1);
+  const [isMuted, setIsMuted] = useState(false);
+
 
   const URL = "https://shielded-inlet-52440.herokuapp.com";
   useEffect(() => {
@@ -24,6 +27,7 @@ function App() {
     setInterval(() => {
       setRefresh((prev) => prev + 1);
     }, 25000);
+
   }, []);
 
   return (
@@ -40,11 +44,12 @@ function App() {
                   />
                 </div>
                 <div className="shops">
-                  <List data={data} />
+                  <List data={data} isMuted={isMuted} />
                 </div>
               </div>
               {/* <RefreshTimer /> */}
               <Dialog />
+              <VolumeButton isMuted={isMuted} setIsMuted={setIsMuted}/>
               {data[data.length - 1] && (
                 <div className="update">
                   Ostatnia aktualizacja: {data[data.length - 1].lastUpdate}

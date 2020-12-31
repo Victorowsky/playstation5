@@ -3,7 +3,7 @@ import SoundEffect from "./SoundEffect";
 import UnAvailable from "./UnAvailable";
 import Available from "./Available";
 
-const List = ({ data }) => {
+const List = ({ data, isMuted }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const list = data.map((item, index) => (
@@ -68,7 +68,7 @@ const List = ({ data }) => {
 
   return (
     <>
-      {list} <SoundEffect isPlaying={isPlaying} />
+      {list} <SoundEffect isPlaying={isPlaying} isMuted={isMuted} />
     </>
   );
 };
