@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/playstation5/static/css/main.548b8590.chunk.css",
-    "main.js": "/playstation5/static/js/main.b64c1be9.chunk.js",
-    "main.js.map": "/playstation5/static/js/main.b64c1be9.chunk.js.map",
+    "main.js": "/playstation5/static/js/main.00ca0f74.chunk.js",
+    "main.js.map": "/playstation5/static/js/main.00ca0f74.chunk.js.map",
     "reactPlayerDailyMotion.js": "/playstation5/static/js/reactPlayerDailyMotion.a879901d.chunk.js",
     "reactPlayerDailyMotion.js.map": "/playstation5/static/js/reactPlayerDailyMotion.a879901d.chunk.js.map",
     "reactPlayerFacebook.js": "/playstation5/static/js/reactPlayerFacebook.89514ee0.chunk.js",
@@ -29,16 +29,17 @@
     "reactPlayerYouTube.js.map": "/playstation5/static/js/reactPlayerYouTube.a672b9bc.chunk.js.map",
     "runtime-main.js": "/playstation5/static/js/runtime-main.f7b40f90.js",
     "runtime-main.js.map": "/playstation5/static/js/runtime-main.f7b40f90.js.map",
-    "static/js/14.46b9a085.chunk.js": "/playstation5/static/js/14.46b9a085.chunk.js",
-    "static/js/14.46b9a085.chunk.js.map": "/playstation5/static/js/14.46b9a085.chunk.js.map",
+    "static/js/14.3059921e.chunk.js": "/playstation5/static/js/14.3059921e.chunk.js",
+    "static/js/14.3059921e.chunk.js.map": "/playstation5/static/js/14.3059921e.chunk.js.map",
     "index.html": "/playstation5/index.html",
     "static/css/main.548b8590.chunk.css.map": "/playstation5/static/css/main.548b8590.chunk.css.map",
-    "static/js/14.46b9a085.chunk.js.LICENSE.txt": "/playstation5/static/js/14.46b9a085.chunk.js.LICENSE.txt"
+    "static/js/14.3059921e.chunk.js.LICENSE.txt": "/playstation5/static/js/14.3059921e.chunk.js.LICENSE.txt",
+    "static/media/ps5.812ce721.png": "/playstation5/static/media/ps5.812ce721.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f7b40f90.js",
-    "static/js/14.46b9a085.chunk.js",
+    "static/js/14.3059921e.chunk.js",
     "static/css/main.548b8590.chunk.css",
-    "static/js/main.b64c1be9.chunk.js"
+    "static/js/main.00ca0f74.chunk.js"
   ]
 }
